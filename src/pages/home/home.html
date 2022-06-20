@@ -21,75 +21,26 @@
  
   <div [ngSwitch]="cursos">
     <ion-list *ngSwitchCase="'proximos'">
-      
-      <button ion_button (click)="openPageSobre()" ion-item>
+ 
+      <button ion-item *ngFor="let curso of cursosA" (click)="openPageDetalhes(curso)">
         <ion-avatar item-start>
-          <img src="https://blogs.windows.com/wp-content/uploads/prod/2020/08/windows-logo-social.png">
+          <img src="{{curso?.img_icon}}">
+ 
         </ion-avatar>
-        <h2>Windows</h2>
-        <p>Inicia em 23/07/2022</p>
-      </button>
-
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://i.pinimg.com/originals/08/de/31/08de31d4138d93f3f045a89a041aa5fc.jpg">
-        </ion-avatar>
-        <h2>Hardware</h2>
-        <p>Inicia em 25/05/2022</p>
-      </button>
-
-
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/1200px-Python.svg.png">
-        </ion-avatar>
-        <h2>Python</h2>
-        <p>Inicia em 28/04/2022</p>
-      </button>
-
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://www.stickersdevs.com.br/wp-content/uploads/2022/01/java-adesivo-sticker.png">
-        </ion-avatar>
-        <h2>Java</h2>
-        <p>Inicia em 15/09/2022</p>
-      </button>
+        {{ curso.nome }} <br> <h6>Concluido em: {{ curso.dt_realizacao }}</h6>
+      </button> 
  
      </ion-list>
  
     <ion-list *ngSwitchCase="'concluidos'">
-
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/-5be0989bbc0c9.jpg">
-        </ion-avatar>
-        <h2>Informática</h2>
-        <p>Concluido em 25/03/2022</p>
-      </button>
-
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://brasiltreinariopardo.com.br/wp-content/uploads/2020/06/montagem-manutencao-computadores-completo.jpg">
-        </ion-avatar>
-        <h2>Montagem e Manutenção</h2>
-        <p>Concluido em 25/03/2022</p>
-      </button>
  
-      <button ion_button (click)="openPageSobre()" ion-item>
+      <button ion-item *ngFor="let curso of cursosArr" (click)="openPageSobre(curso)">
         <ion-avatar item-start>
-          <img src="https://imgs.jusbr.com/publications/images/0fbaf374173d2ac038a4913a1017479a">
-        </ion-avatar>
-        <h2>Software</h2>
-        <p>Concluido em 25/03/2022</p>
-      </button>
+          <img src="{{curso?.img_icon}}">
  
-      <button ion_button (click)="openPageSobre()" ion-item>
-        <ion-avatar item-start>
-          <img src="https://t2.tudocdn.net/606607?w=1200&h=1200">
         </ion-avatar>
-        <h2>Linux</h2>
-        <p>Concluido em 25/03/2022</p>
-      </button>
+        {{ curso.nome }} <br> <h6>Concluido em: {{ curso.dt_realizacao }}</h6>
+      </button> 
  
     </ion-list>
   </div>

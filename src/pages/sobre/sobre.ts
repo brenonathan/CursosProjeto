@@ -20,7 +20,6 @@ export class SobrePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SobrePage');
-    let items=this.navParams.get('detalhes');
 
     let curso = this.navParams.get('key');
     console.log(curso);

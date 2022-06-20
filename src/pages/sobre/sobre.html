@@ -1,28 +1,29 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Sobre</ion-title>
+    <ion-title>Detalhes</ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content padding>
-  
-  <ion-card>
-
+ 
+ 
     <ion-card-header>
-      {{ curso?.nome }}
+      <h1>Curso: {{ curso?.nome }}</h1>
     </ion-card-header>
-  
-    <ion-card-content>
-      {{ curso?.professor }}
-      {{ curso?.cargaHoraria }}
-    </ion-card-content>
-  
-  </ion-card>
-
-
-  <button color="dark" ion-button block (click)="fechar()">Fechar</button>
-
+ 
+    <ion-card>
+      <img src="{{curso?.img_icon}}"/>
+      <ion-card-content>
+        <p>
+          Professor: {{ curso?.professor }} <br> 
+          Data de Inicio: {{ curso?.dt_realizacao }} <br>
+          Carga Horária: {{ curso?.carga_horaria }} horas <br>
+          Conteúdo: {{ curso?.conteudo }} <br>
+        </p>
+      </ion-card-content>
+    </ion-card>
+ 
+    <button color="dark" ion-button block (click) = "fechar()">Fechar</button>
+ 
+ 
 </ion-content>

@@ -7,11 +7,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  items;   
+  cursosArr;   
   
   constructor(public navCtrl: NavController) {
 
-      this.items = [
+      this.cursosArr = [
 
       {
           "id": 1,
@@ -141,9 +141,5 @@ ionViewDidEnter(){
 openPageSobre(curso) {
     this.navCtrl.push('SobrePage', {'key': curso});
   }
-
-abrirPageSobre(item){
-    this.navCtrl.push('SobrePage',{detalhes:item})
-}
 
 }
